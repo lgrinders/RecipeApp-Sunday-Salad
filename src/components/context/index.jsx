@@ -11,7 +11,7 @@ export default function GlobalState({ children }) {
   const [favorites, setFavorites] = useState(() => {
     let currentValue;
     try {
-      currentValue = JSON.parse(localStorage.getItem("favorites"));
+      currentValue = JSON.parse(localStorage.getItem("favorites")) || [];
     } catch (error) {
       console.log(error);
       currentValue = [];
